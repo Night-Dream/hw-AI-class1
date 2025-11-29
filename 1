@@ -2,3 +2,25 @@
 更新NVIDIA驱动：
 网站：https://www.nvidia.cn/drivers/lookup/
 ![1](https://github.com/Night-Dream/hw-AI-class1/blob/main/8D8FEB4CA6C715B873126020C425A77B.png)
+第二步：安装CUDA toolkit：
+上一步安装后
+打开cmd页面输入nvidia-smi命令，根据Driver Version选择最接近的版本号
+网址：https://developer.nvidia.com/cuda-toolkit-archive
+安装完成后cmd窗口输入nvcc --version能看到安装的版本，即为安装成功
+第三步：
+下载与CUDA Toolkit版本匹配的CUDNN
+网址：https://developer.nvidia.com/rdp/cudnn-archive
+解压下好的zip文件，拷贝到cuda toolkit安装路径文件夹下
+路径可以在cmd窗口下输入set cuda查询
+第四步：
+安装anaconda：
+网址：https://www.anaconda.com/download
+安装完毕后进入anaconda prompt
+在prompt终端输入python --version查询python版本
+输入conda create -n name python=version创建虚拟环境
+输入conda active name激活切换到对应虚拟环境
+第五步：
+安装pytorch：
+网址：https://pytorch.org/
+第六步：
+安装vscode并切换到上一步的虚拟环境
