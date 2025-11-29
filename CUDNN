@@ -1,0 +1,36 @@
+CUDNN 安装步骤
+
+CUDNN 安装简要步骤
+
+前置条件
+
+已安装 兼容版本的 CUDA Toolkit（CUDNN 版本需与 CUDA 严格匹配，参考 官方匹配表），且已注册 NVIDIA 开发者账号。  
+
+1. 下载对应版本
+
+1. 访问 CUDNN 归档页，选择与 CUDA 版本匹配的 CUDNN 版本（如 CUDA 12.4 对应 CUDNN 8.9.x）；  
+
+2. 选择对应系统安装包（Windows 选 zip，Linux 选 tar.gz），登录后下载。  
+
+2. 安装操作
+
+Windows 系统
+
+1. 解压下载的 zip 包，得到 bin、include、lib 三个文件夹；  
+
+2. 复制三个文件夹到 CUDA 安装目录（默认：C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\版本号），覆盖同名文件夹。  
+
+Linux 系统（以 Ubuntu 为例）
+
+1. 解压安装包：tar -zxvf cudnn-linux-x86_64-8.x.x.x_cuda12.x.tar.gz；  
+
+2. 复制文件到 CUDA 目录：  
+
+sudo cp cudnn-*-linux-x86_64/include/cudnn*.h /usr/local/cuda/include/
+sudo cp -P cudnn-*-linux-x86_64/lib/libcudnn* /usr/local/cuda/lib64/
+
+3. 赋予权限：sudo chmod a+r /usr/local/cuda/include/cudnn*.h /usr/local/cuda/lib64/libcudnn*。  
+
+3. 验证（可选）
+
+Linux 可执行：cat /usr/local/cuda/include/cudnn_version.h | grep CUDNN_MAJOR -A 2，输出版本信息即成功。
